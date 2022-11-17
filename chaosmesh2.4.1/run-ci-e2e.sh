@@ -46,5 +46,8 @@ sed -i "s#15#120#g" e2e-test/e2e/chaos/stresschaos/cpu.go  # 此处15s等待时�
 export GOPROXY=https://proxy.golang.com.cn,direct   # 设置代理，由于下面步骤go download太慢
 export KUBECONFIG=/root/.kube/config
 make e2e-build
-mv ./e2e-test/image/e2e/bin/ginkgo  ../
-mv ./e2e-test/image/e2e/bin/e2e.test ../
+
+
+# 拷贝结果
+mv ./e2e-test/image/e2e/bin/ginkgo  ../../chaosmesh2.4.1-img/
+mv ./e2e-test/image/e2e/bin/e2e.test ../../chaosmesh2.4.1-img/
